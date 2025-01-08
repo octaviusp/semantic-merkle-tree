@@ -1,0 +1,32 @@
+{
+    "root_hash": "ebd9cc85dcfb893cd12e991aebe5a42772bb66b78577823356b90d75dd07c681",
+    "nodes": {
+        "6bc8eace0c34319d9041b1408a9e8f21c28fc9b7558feebcd875378a4e6b79b6": "folder_1/file_1.txt",
+        "8338922569eb0923881cd2b8eb46f8b540ec058738a47940eec0e72fd5e86601": "folder_1/sub_folder_1/file_2.txt",
+        "b9d101d80d5d92f932b550c72c5ebc0027d5c216865db8d4afa26e799b87a1db": "folder_1/sub_folder_1/file_3.txt",
+        "5aa7f61f099e8935ef035491f00cdafec232ab467d915ac8ca2252abcc1c4a39": "folder_1/sub_folder_1",
+        "ebd9cc85dcfb893cd12e991aebe5a42772bb66b78577823356b90d75dd07c681": "folder_1"
+    },
+    "leaves": [
+        "6bc8eace0c34319d9041b1408a9e8f21c28fc9b7558feebcd875378a4e6b79b6",
+        "8338922569eb0923881cd2b8eb46f8b540ec058738a47940eec0e72fd5e86601",
+        "b9d101d80d5d92f932b550c72c5ebc0027d5c216865db8d4afa26e799b87a1db"
+    ],
+    "hierarchy": {
+        "5aa7f61f099e8935ef035491f00cdafec232ab467d915ac8ca2252abcc1c4a39": {
+            "files": {
+                "file_2.txt": "8338922569eb0923881cd2b8eb46f8b540ec058738a47940eec0e72fd5e86601",
+                "file_3.txt": "b9d101d80d5d92f932b550c72c5ebc0027d5c216865db8d4afa26e799b87a1db"
+            },
+            "subdirs": {}
+        },
+        "ebd9cc85dcfb893cd12e991aebe5a42772bb66b78577823356b90d75dd07c681": {
+            "files": {
+                "file_1.txt": "6bc8eace0c34319d9041b1408a9e8f21c28fc9b7558feebcd875378a4e6b79b6"
+            },
+            "subdirs": {
+                "sub_folder_1": "5aa7f61f099e8935ef035491f00cdafec232ab467d915ac8ca2252abcc1c4a39"
+            }
+        }
+    }
+}
