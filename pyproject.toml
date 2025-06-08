@@ -1,0 +1,34 @@
+[project]
+name = "semantic-merkle-tree"
+version = "0.1.0"
+description = """
+A meaning-aware Merkle tree that understands semantic changes, not just byte-level differences.
+
+Semantic Merkle Tree (SMT) is a hierarchical data structure that combines traditional Merkle tree hashing with AI-powered semantic embeddings. Instead of treating every change as significant, SMT only propagates updates when the *meaning* of content changes beyond a configurable threshold. This enables smarter caching, efficient CI/CD pipelines, and cost savings by ignoring cosmetic or non-semantic edits.
+
+- 🧠 Uses sentence-transformers to embed file contents as latent-meaning vectors
+- 🔍 Compares semantic similarity (cosine) to detect meaningful changes
+- ⚡ Only updates hashes and triggers workflows when semantic drift occurs
+- 🌲 Maintains all Merkle tree benefits, with added semantic awareness
+
+Ideal for: code/documentation monitoring, smart LLM doc generation, policy tracking, and any workflow where *meaning* matters more than bytes.
+
+See README.md for full details, examples, and configuration.
+"""
+authors = [
+    {name = "octaviusp", email = "octaviopavon7@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "sentence-transformers (>=4.1.0,<5.0.0)",
+    "numpy (>=2.2.6,<3.0.0)",
+    "tqdm (>=4.67.1,<5.0.0)"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+[tool.poetry]
+package-mode = false

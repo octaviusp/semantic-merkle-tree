@@ -1,0 +1,7 @@
+const history = [
+    { date: "2023-01-01", event: "Project created", user: "alice" },
+    { date: "2023-01-05", event: "Initial commit", user: "bob" },
+    { date: "2023-01-10", event: "Added README", user: "carol" },
+    { date: "2023-01-15", event: "First release", user: "dave" }
+];
+

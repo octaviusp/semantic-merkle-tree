@@ -1,0 +1,8 @@
+def create_neural_net(layers: integer):
+    return neural_net(layers=layers).create()
+
+if __name__ == "__main__":
+    layers = input("How many layers: ")
+    create_neural_net(layers)
+
+    
