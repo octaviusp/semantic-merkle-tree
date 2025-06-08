@@ -17,33 +17,35 @@
 
 **Mathematical Explanation**
 
-For those seeking a deeper, more technical understanding, consider the following:
+For a more technical perspective, here's how semantic integrity generalizes the classic Merkle tree:
 
-Traditional hash functions used in Merkle trees are **discrete** and **injective** (ideally, each unique input maps to a unique output). However, with **semantic integrity**, we relax this strictness and instead seek an *approximate* or *fuzzy* hashing, where multiple distinct inputs with similar *meaning* can map to the same output. In this sense, the SMT hash function is not strictly injective; where multiple \( X \) can map to the same \( Y \) if their meanings are sufficiently close.
+Traditional Merkle trees use hash functions that are **discrete** and ideally **injective**—meaning each unique input produces a unique output. In contrast, a Semantic Merkle Tree (SMT) introduces *approximate* or *fuzzy* hashing: different inputs with similar *meaning* can map to the same output. Thus, the SMT hash function is not strictly injective; multiple \( X \) can map to the same \( Y \) if their meanings are close enough.
 
-Let \( \varepsilon \) (epsilon) be our semantic similarity threshold, where \( \varepsilon \in [0, 1] \):
+Let $\varepsilon$ (epsilon) be the semantic similarity threshold, with $\varepsilon \in [0, 1]$:
 
-- If \( \varepsilon = 1 \), we recover the classic Merkle tree: **any** change is significant.
-- If \( \varepsilon < 1 \), we allow for *semantic equivalence*: only changes that alter the meaning beyond the threshold are considered significant.
+- If $\varepsilon = 1$, we recover the classic Merkle tree: **any** change is significant.
+- If $\varepsilon < 1$, we allow for *semantic equivalence*: only changes that alter the meaning beyond the threshold are considered significant.
 
 **Formally:**
 
-Given two versions of content, \( \text{old\_content} \) and \( \text{new\_content} \), we compute their semantic difference:
+Given two versions of content, $\text{old\_content}$ and $\text{new\_content}$, we compute their semantic difference:
 
-\[
+$$
 a = \text{semantic\_difference}(\text{old\_content}, \text{new\_content})
-\]
+$$
 
-where \( a \in [0, 1] \) (for example, \( a = 1 - \cos(\theta) \) if using cosine similarity).
+where $a \in [0, 1]$ (for example, $a = 1 - \cos(\theta)$ if using cosine similarity).
 
 The update rule is:
 
-\[
+$$
 \text{If } a < \varepsilon: \quad \text{do not recompute hash (treat as unchanged)}
-\]
-\[
+$$
+$$
 \text{Else:} \quad \text{recompute hash (treat as changed)}
-\]
+$$
+
+> **Note:** GitHub now supports native math rendering in Markdown using `$...$` for inline and `$$...$$` for block math, so the above will render correctly on GitHub ([see announcement](https://github.blog/news-insights/product-news/math-support-in-markdown/)).
 
 This approach allows the Merkle tree to ignore changes that do not alter the *latent meaning* of the content, thus reducing unnecessary recomputation and propagation.
 
