@@ -31,7 +31,7 @@ Let $\varepsilon$ (epsilon) be the semantic similarity threshold, with $\varepsi
 Given two versions of content, $\text{old\_content}$ and $\text{new\_content}$, we compute their semantic difference:
 
 $$
-a = \text{semantic\_difference}(\text{old\_content}, \text{new\_content})
+a = \text{semantic\_difference}\!\left(\text{old\_content},\, \text{new\_content}\right)
 $$
 
 where $a \in [0, 1]$ (for example, $a = 1 - \cos(\theta)$ if using cosine similarity).
@@ -39,10 +39,10 @@ where $a \in [0, 1]$ (for example, $a = 1 - \cos(\theta)$ if using cosine simila
 The update rule is:
 
 $$
-\text{If } a < \varepsilon: \quad \text{do not recompute hash (treat as unchanged)}
+\text{If } a < \varepsilon:\ \text{do not recompute hash (treat as unchanged)}
 $$
 $$
-\text{Else:} \quad \text{recompute hash (treat as changed)}
+\text{Else:}\ \text{recompute hash (treat as changed)}
 $$
 
 > **Note:** GitHub now supports native math rendering in Markdown using `$...$` for inline and `$$...$$` for block math, so the above will render correctly on GitHub ([see announcement](https://github.blog/news-insights/product-news/math-support-in-markdown/)).
